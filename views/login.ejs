@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome please Login</title>
+    <link rel="stylesheet" href='/css/blogd.css'>
+</head>
+
+<body>
+    <div class="signup">
+        <div class="head">
+            <a href="/" class="blogd">Blogd</a>
+            <h1 class="login-signup">Login</h1>
+        </div>
+        <form action="" method="post" class="form-center">
+            <div class='form-d form-login-d'>
+                <label for='email' class="label">Email</label>
+                <input type="email" placeholder='Email' name='email' class='form-field' required autocomplete="false">
+            </div>
+            <div class='form-d form-login-d'>
+                <label for='password' class="label">Password</label>
+                <input type="password" placeholder='Password' name='password' class='form-field' required>
+            </div>
+            <div class="form-btn-container">
+                <button type='submit' name='submit-login' class='form-btn'>Log in</button>
+            </div>
+
+        </form>
+        <a href='/auth/signup' class="link-bottom">Not a member Sign up</a>
+    </div>
+</body>
+
+</html>

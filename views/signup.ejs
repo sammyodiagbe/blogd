@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome please sign up</title>
+    <link rel="stylesheet" href='/css/blogd.css'>
+</head>
+
+<body>
+    <div class="signup">
+        <div class="head">
+            <a href="/" class="blogd">Blogd</a>
+            <h1 class="login-signup">Sign up</h1>
+        </div>
+        <% if (error) { %>
+        <p class="error-success error">
+            <%= error %>
+        </p>
+        <% } %>
+        <% if (message) { %>
+        <p class="error-success success">
+            <%= message %>
+            <a href='/auth/login'> Login</a>
+        </p>
+        <% } %>
+        <form action="" method="post" class="form-center">
+            <div class='form-d'>
+                <div>
+                    <label for='firstname' class="label">Firstname</label>
+                    <input type="text" placeholder='Firstname' name='firstname' class='form-field' required
+                        autocomplete="false">
+                </div>
+                <div>
+                    <label for="lastname" class="label">Lastname</label>
+                    <input type="text" placeholder='Lastname' name='lastname' class='form-field' required autocomplete="false">
+                </div>
+            </div>
+            <div class='form-email'>
+                <label for="email" class="label">Email</label>
+                <input type='email' placeholder='Email' name='email' class='form-field' required autocomplete="false">
+            </div>
+
+            <div class='form-d'>
+                <div>
+                    <label for="password" class="label">Password </label>
+                    <input type="password" placeholder='Password' name='password' class='form-field' required>
+                </div>
+                <div>
+                    <label for='confirm-password' class="label">Confirm password</label>
+                    <input type="password" placeholder='Confirm password' name='confirm_password' class='form-field'
+                        required>
+                </div>
+            </div>
+            <div class="form-btn-container">
+                <button type='submit' name='submit-signup' class='form-btn'>Sign me up</button>
+            </div>
+
+        </form>
+        <a href='/auth/login' class="link-bottom">Already a member, Login</a>
+    </div>
+</body>
+
+</html>
