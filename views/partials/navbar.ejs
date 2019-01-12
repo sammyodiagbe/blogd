@@ -1,0 +1,13 @@
+<nav class="navigation">
+    <div class="container">
+        <h2><a href="/">blogd</a></h2>
+        <ul>
+            <% if(page == 'index') { %>
+            <li><a href="/dashboard"><span class="user-donut">
+                        <%= authUser.firstname[0].toUpperCase() + authUser.lastname[0].toUpperCase() %></span></a></li>
+            <% } %>
+            <li><a href="/auth/logout" class="logout">Logout</a></li>
+
+        </ul>
+    </div>
+</nav>

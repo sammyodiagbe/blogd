@@ -1,0 +1,22 @@
+<div class="user-sidebar">
+    <div class="user">
+        <span class="user-round">
+            <%= authUser.firstname[0].toUpperCase() + authUser.lastname[0].toUpperCase() %>
+        </span>
+        <div class='user-name'>
+            <span class='name'>
+                <%= `${authUser.firstname} ${authUser.lastname}` %></span>
+            <p>
+                <%= authUser.email %>
+            </p>
+        </div>
+    </div>
+    <div class="user-post">
+        <form aciton='/post' method="post">
+            <textarea name="post_content" class="form-post-textarea" placeholder="Share something?" required></textarea>
+            <button class='post-btn'>
+                post
+            </button>
+        </form>
+    </div>
+</div>

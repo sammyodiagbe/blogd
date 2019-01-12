@@ -2,7 +2,6 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const mongoose = require('mongoose');
 const app = express();
 const db = 'mongodb://localhost/blogdatabase';
@@ -26,11 +25,15 @@ app.use(express.static('public'));
 app.use(session({
     secret: 'hfhadfhuhdfuufauifui7iuouo9389r8yhiugusafuyihasugui',
     saveUninitialized: false,
-    resave: false
+    resave: false,
+    maxAge: 60 * 60 * 1000 * 24,
+    expires: 60 * 60 * 1000 * 24
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session({
+    expires: 60 * 60 * 1000 * 24
+}));
 
 app.use('/api', require('./routes/api'));
 app.use(require('./routes/mainRoutes')(passport));
@@ -42,9 +45,7 @@ app.set('view engine', 'ejs');
 
 // temporary routes
 
-app.get('/', (req, res) => {
-    res.render('index');
-})
+
 
 app.use((req, res) => {
     res.render('404');

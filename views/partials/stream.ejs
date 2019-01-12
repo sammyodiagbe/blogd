@@ -1,0 +1,22 @@
+<div class="user-stream">
+    <% if(postError) { %>
+    <p class="error">
+        <%= postError %>
+    </p>
+    <% } %>
+    <% if(message) { %>
+    <p class="success">
+        <%= message %>
+    </p>
+    <% } %>
+    <% if (posts) { %>
+    <% for (let i = 0; i < posts.length; i++) { %>
+    <p>
+        <%= posts[i].post_content  %>
+    </p>
+    <p>
+        <%= posts[i].post_time %>
+    </p>
+    <% } %>
+    <% } %>
+</div>
