@@ -5,7 +5,7 @@ const User = require('../db/userModel');
 const Post = require('../db/postModel');
 const router = express.Router();
 
-
+// logged in user middleware to check to see if the user is signed in or not
 const loggedIn = (req, res, next) => {
     if (req.isAuthenticated()) {
         return next();
@@ -15,8 +15,7 @@ const loggedIn = (req, res, next) => {
 }
 
 
-
-
+// exporting all routes 
 module.exports = (passport) => {
 
     router.get('/', loggedIn, (req, res) => {
@@ -75,7 +74,6 @@ module.exports = (passport) => {
         const { user } = req;
         Post.find({})
             .exec((err, data) => {
-                console.log(typeof (data))
                 res.render('dashboard', {
                     authUser: user,
                     page: 'dashboard',

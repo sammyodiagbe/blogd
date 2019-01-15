@@ -31,9 +31,7 @@ app.use(session({
 }));
 
 app.use(passport.initialize());
-app.use(passport.session({
-    expires: 60 * 60 * 1000 * 24
-}));
+
 
 app.use('/api', require('./routes/api'));
 app.use(require('./routes/mainRoutes')(passport));
